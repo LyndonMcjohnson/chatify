@@ -46,7 +46,7 @@
            <div class="@if($type == 'group') show @endif messenger-tab groups-tab app-scroll" data-view="groups">
                 {{-- items --}}
                 <p style="text-align: center;color:grey;margin-top:30px">
-                    <a target="_blank" style="color:{{$messengerColor}};" href="https://chatify.munafio.com/notes#groups-feature">Click here</a> for more info!
+                    This feature will be released soon.
                 </p>
              </div>
 
