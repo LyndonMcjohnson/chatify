@@ -26,7 +26,9 @@
             @if($user->active_status)
                 <span class="activeStatus"></span>
             @endif
-        <div class="avatar av-m" style="background-image: url('{{ $user->profile_photo_url }}');"></div>
+        <div class="avatar av-m"
+        style="background-image: url('{{ $user->profile_photo_url }}');">
+        </div>
         </td>
         {{-- center side --}}
         <td>
