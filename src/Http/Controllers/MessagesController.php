@@ -30,7 +30,7 @@ class MessagesController extends Controller
         $authData = json_encode([
             'user_id' => Auth::user()->id,
             'user_info' => [
-                'name' => Auth::user()->name()
+                'name' => Auth::user()->name
             ]
         ]);
         // check if user authorized
