@@ -13,20 +13,20 @@
                 </nav>
             </nav>
             {{-- Search input --}}
-            <input type="text" class="messenger-search" placeholder="Search" />
+            <input type="text" class="messenger-search form-control" placeholder="Search" />
             {{-- Tabs --}}
-            <div class="messenger-listView-tabs">
+            {{-- <div class="messenger-listView-tabs">
                 <a href="#" @if($type == 'user') class="active-tab" @endif data-view="users">
                     <span class="far fa-user"></span> People</a>
                 <a href="#" @if($type == 'group') class="active-tab" @endif data-view="groups">
                     <span class="fas fa-users"></span> Groups</a>
-            </div>
+            </div> --}}
         </div>
         {{-- tabs and lists --}}
         <div class="m-body contacts-container">
-           {{-- Lists [Users/Group] --}}
-           {{-- ---------------- [ User Tab ] ---------------- --}}
-           <div class="@if($type == 'user') show @endif messenger-tab users-tab app-scroll" data-view="users">
+           	{{-- Lists [Users/Group] --}}
+           	{{-- ---------------- [ User Tab ] ---------------- --}}
+           	<div class="@if($type == 'user') show @endif messenger-tab users-tab app-scroll" data-view="users">
 
                {{-- Favorites --}}
                <div class="favorites-section">
@@ -39,19 +39,17 @@
 
                {{-- Contact --}}
                <div class="listOfContacts" style="width: 100%;height: calc(100% - 200px);position: relative;"></div>
+           	</div>
 
-           </div>
-
-           {{-- ---------------- [ Group Tab ] ---------------- --}}
-           <div class="@if($type == 'group') show @endif messenger-tab groups-tab app-scroll" data-view="groups">
-                {{-- items --}}
+           	{{-- ---------------- [ Group Tab ] ---------------- --}}
+           	{{-- <div class="@if($type == 'group') show @endif messenger-tab groups-tab app-scroll" data-view="groups">
                 <p style="text-align: center;color:grey;margin-top:30px">
                     This feature will be released soon.
                 </p>
-             </div>
+			</div> --}}
 
              {{-- ---------------- [ Search Tab ] ---------------- --}}
-           <div class="messenger-tab search-tab app-scroll"app-scroll" data-view="search">
+           	<div class="messenger-tab search-tab app-scroll"app-scroll" data-view="search">
                 {{-- items --}}
                 <p class="messenger-title">Search</p>
                 <div class="search-records">
