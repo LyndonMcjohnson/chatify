@@ -7,12 +7,6 @@
 A fork of [this package](https://github.com/munafio/chatify) with some modifications to work better with Laravel 8, especially the profile photo URLs.
 See [here](https://medium.com/swlh/using-your-own-forks-with-composer-699358db05d9) for how to use this fork in your project.
 
-# Need a Help? 📣
-
-I have created a server for **Chatify** on `Discord` to let you **up-to-date** and help you as much as I can .. so now you can chat with me, get a help, showcases, and most importantly to get announcements and updates about **Chatify**.
-
-So, [join now](https://discord.gg/RaxyKVykYJ) and keep updated.
-
 # Features
 
 - Users chat system.
