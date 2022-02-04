@@ -2,7 +2,7 @@
 [![Total Downloads](https://poser.pugx.org/munafio/chatify/downloads)](https://packagist.org/packages/munafio/chatify)
 [![License](https://poser.pugx.org/munafio/chatify/license)](https://packagist.org/packages/munafio/chatify)
 
-# Chatify Laravel Package
+# Chatify Clone Laravel Package
 
 A fork of [this package](https://github.com/munafio/chatify) with some modifications to work better with Laravel 8, especially the profile photo URLs.
 See [here](https://medium.com/swlh/using-your-own-forks-with-composer-699358db05d9) for how to use a fork in your project.
