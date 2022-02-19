@@ -1269,7 +1269,8 @@ $(document).ready(function () {
       "rar",
       "txt",
 	  "pdf",
-	  "xlsx"
+	  "xlsx",
+	  "docx"
     ];
     const sizeLimit = 5000000; // 5 megabyte
     const { name: fileName, size: fileSize } = file;
