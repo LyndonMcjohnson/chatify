@@ -1,7 +1,7 @@
 /*app scroll*/
 .app-scroll::-webkit-scrollbar-thumb,
 .app-scroll-thin::-webkit-scrollbar-thumb {
-    background: #323232;
+    background: 283046
 }
 .app-scroll-thin::-webkit-scrollbar {
     background: #2c2c2c;
@@ -15,37 +15,37 @@
     background: #161d31;
 }
 .messenger-search[type="text"] {
-    background: #323232;
+    background: 283046
     color: #fff;
 }
 .messenger-listView {
     background: #161d31;
-    border: 1px solid #323232;
+    border: 1px solid 283046
 }
 .messenger-listView-tabs {
-    border-bottom: 1px solid #323232;
+    border-bottom: 1px solid 283046
 }
 .messenger-listView-tabs a:hover,
 .messenger-listView-tabs a:focus {
-    background-color: #323232;
+    background-color: 283046
 }
 .messenger-favorites div.avatar {
     border: 2px solid #161d31;
 }
 .messenger-list-item:hover {
-    background: #323232;
+    background: 283046
 }
 .messenger-messagingView {
-    border-top: 1px solid #323232;
-    border-bottom: 1px solid #323232;
+    border-top: 1px solid 283046
+    border-bottom: 1px solid 283046
     background: #161d31;
 }
 .m-header-messaging {
-    background: #323232;
+    background: 283046
 }
 .messenger-infoView {
     background: #161d31;
-    border: 1px solid #323232;
+    border: 1px solid 283046
 }
 .messenger-infoView > p {
     color: #fff;
@@ -54,7 +54,7 @@
     border-top: 1px solid #2f2f2f;
 }
 .messenger-sendCard {
-    background: #323232;
+    background: 283046
     border-top: 1px solid #161d31;
 }
 .attachment-preview > p {
@@ -64,11 +64,11 @@
     color: #fff;
 }
 .message-card p {
-    background: #323232;
+    background: 283046
     color: #fff;
 }
 .m-li-divider {
-    border-bottom: 1px solid #323232;
+    border-bottom: 1px solid 283046
 }
 .m-header a,
 .m-header a:hover,
@@ -83,13 +83,13 @@
     border: 2px solid #161d31;
 }
 .messenger-list-item:hover .activeStatus {
-    border-color: #323232;
+    border-color: 283046
 }
 .messenger-favorites > div p {
     color: #ffffff;
 }
 .avatar {
-    background-color: #323232;
+    background-color: 283046
 }
 /*
 ***********************************************
@@ -98,7 +98,7 @@
 */
 .loadingPlaceholder-body div,
 .loadingPlaceholder-header tr td div {
-    background: #323232;
+    background: 283046
     background-image: -webkit-linear-gradient(
         left,
         #323232 0%,
