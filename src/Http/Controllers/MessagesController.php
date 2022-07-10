@@ -248,40 +248,40 @@ class MessagesController extends Controller
      * @param Request $request
      * @return JSON response
      */
-    public function getContacts(Request $request)
-    {
-        // get all users that received/sent message from/to [Auth user]
-        $users = Message::join('users',  function ($join) {
-            $join->on('ch_messages.from_id', '=', 'users.id')
-                ->orOn('ch_messages.to_id', '=', 'users.id');
-        })
-        ->where(function ($q) {
-            $q->where('ch_messages.from_id', Auth::user()->id)
-            ->orWhere('ch_messages.to_id', Auth::user()->id);
-        })
-        ->where('users.id','!=',Auth::user()->id)
-        ->select('users.*',DB::raw('MAX(ch_messages.created_at) max_created_at'))
-        ->orderBy('max_created_at', 'desc')
-        ->groupBy('users.id')
-        ->paginate($request->per_page ?? $this->perPage);
+	public function getContacts(Request $request)
+	{
+		// get all users that received/sent message from/to [Auth user]
+		$users = Message::join('users',  function ($join) {
+			$join->on('ch_messages.from_id', '=', 'users.id')
+			->orOn('ch_messages.to_id', '=', 'users.id');
+		})
+			->where(function ($q) {
+				$q->where('ch_messages.from_id', Auth::user()->id)
+					->orWhere('ch_messages.to_id', Auth::user()->id);
+			})
+			->where('users.id', '!=', Auth::user()->id)
+			->select('users.*', DB::raw('MAX(ch_messages.created_at) max_created_at'))
+			->orderBy('max_created_at', 'desc')
+			->groupBy('users.id')
+			->paginate($request->per_page ?? $this->perPage);
 
-        $usersList =$users->items();
+		$usersList = $users->items();
 
-        if (count($usersList) > 0) {
-            $contacts = '';
-            foreach ($usersList as $user) {
-                $contacts .= Chatify::getContactItem($user);
-            }
-        }else{
-            $contacts = '<p class="message-hint center-el"><span>Your contact list is empty</span></p>';
-        }
+		if (count($usersList) > 0) {
+			$contacts = '';
+			foreach ($usersList as $user) {
+				$contacts .= Chatify::getContactItem($user);
+			}
+		} else {
+			$contacts = '<p class="message-hint center-el"><span>Your contact list is empty</span></p>';
+		}
 
-        return Response::json([
-            'contacts' => $contacts,
-            'total' => $users->total() ?? 0,
-            'last_page' => $users->lastPage() ?? 1,
-        ], 200);
-    }
+		return Response::json([
+			'contacts' => $contacts,
+			'total' => $users->total() ?? 0,
+			'last_page' => $users->lastPage() ?? 1,
+		], 200);
+	}
 
     /**
      * Update user's list item data
@@ -367,9 +367,12 @@ class MessagesController extends Controller
     {
         $getRecords = null;
         $input = trim(filter_var($request['input'], FILTER_SANITIZE_STRING));
-        $records = User::where('id','!=',Auth::user()->id)
+        $records = Auth::user()->user_type == 'client' ? User::where('user_type', 'staff')
+					->where('id','!=',Auth::user()->id)
                     ->where('name', 'LIKE', "%{$input}%")
-                    ->paginate($request->per_page ?? $this->perPage);
+                    ->paginate($request->per_page ?? $this->perPage) : User::where('id', '!=', Auth::user()->id)
+					->where('name', 'LIKE', "%{$input}%")
+					->paginate($request->per_page ?? $this->perPage);
         foreach ($records->items() as $record) {
             $getRecords .= view('Chatify::layouts.listItem', [
                 'get' => 'search_item',
